@@ -5,7 +5,7 @@ class HTMLWriter
   def create_html_file(string)
     file = File.new("sample_out.html", "w")
 
-    # write string to the file
+    file.write(string)
 
     file.close
   end
