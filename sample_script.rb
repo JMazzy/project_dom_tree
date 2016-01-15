@@ -1,3 +1,5 @@
+# A sample script to do some "live testing" of all stages of the project
+
 require_relative "lib/dom_parser.rb"
 
 puts "Initializing DOM parser..."
@@ -17,7 +19,11 @@ puts
 puts "Rendering tree data..."
 parser.renderer.render
 puts
-puts "Rendering tree as html..."
+puts "Rendering data from node matching a search..."
+matches = parser.searcher.search_by("class","foo")
+parser.renderer.render_node_data(matches[0])
+puts
+puts "Rendering full tree as html..."
 puts parser.recreate_html
 puts
 puts "Writing tree html back to sample_out.html..."

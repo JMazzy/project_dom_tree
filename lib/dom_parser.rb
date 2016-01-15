@@ -7,7 +7,7 @@ require_relative "./tree_searcher.rb"
 
 class DOMParser
 
-  attr_reader :reader, :writer, :tree, :renderer
+  attr_reader :reader, :writer, :tree, :renderer, :searcher
 
   ATTR_REGEX = /(\w+)\s?=\s?'([\S]*[\w\s]*)'/
   END_TAG_REGEX = /<\/\s?([^<>\/]*)\s?>/
@@ -19,6 +19,7 @@ class DOMParser
     @writer = HTMLWriter.new
     @tree = DOMTree.new
     @renderer = NodeRenderer.new(@tree)
+    @searcher = TreeSearcher.new(@tree)
   end
 
   # Reads and converts given file into an array of html hashes
