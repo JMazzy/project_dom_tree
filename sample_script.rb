@@ -5,7 +5,7 @@ require_relative "lib/dom_parser.rb"
 puts "Initializing DOM parser..."
 parser = DOMParser.new
 puts "Reading file sample.html..."
-string_array = parser.read_file("sample.html")
+string_array = parser.read_file("test.html")
 puts
 puts "Converting into tree-able array..."
 attr_hash_array = parser.parser(string_array)

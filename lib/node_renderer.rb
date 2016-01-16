@@ -44,13 +44,15 @@ class NodeRenderer
   end
 
   def render_node_data(node)
-    puts "Starting from node:"
-    data = node.data
-    data.each do |key,value|
-      puts "#{key.to_s.capitalize}: #{value}"
+    if node
+      puts "Starting from node:"
+      data = node.data
+      data.each do |key,value|
+        puts "#{key.to_s.capitalize}: #{value}"
+      end
+      puts "Depth: #{node.depth}"
+      puts
     end
-    puts "Depth: #{node.depth}"
-    puts
   end
 
   def clear_node_type_counts

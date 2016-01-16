@@ -52,8 +52,7 @@ class DOMParser
 
     attr_hash[:type] = :start_tag
 
-    attr_hash[:tag_name] = string.match(TAG_NAME_REGEX)[1]
-
+    attr_hash[:tag_name] = string.match(TAG_NAME_REGEX)[1] if string.match(TAG_NAME_REGEX)
     attribute_match_data = string.scan(ATTR_REGEX)
     attribute_match_data.each do |match|
       key = match[0]
